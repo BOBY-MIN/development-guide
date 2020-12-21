@@ -65,7 +65,7 @@ GRANT INSERT, UPDATE, DELETE ON [db_name].* TO 'role_name'@'host';
 ```
 REVOKE 'role_name'@'hos' FROM 'user_name'@'host';
 ```
-
+***
 ### 유저 관리
 
 > 생성
