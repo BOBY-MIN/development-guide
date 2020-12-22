@@ -1,4 +1,23 @@
+
+### @Valid 사용을 위한 dependency 추가
+
+> pom.xml
+
+```
+<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-validation</artifactId>
+		<version>2.4.0</version>
+</dependency>
+```
+
+* spring validation annotation 을 위해 dependency 추가
+
+***
+
 ### 커스텀 어노테이션 생성(ex:byte 체크)
+
+> ByteSize
 
 ```
 package com.test.www;
@@ -41,6 +60,8 @@ public @interface ByteSize {
 * @ByteSize(min = 5, max = 10) 과 같이 매개변수 전달 필요 시 int min() default 0; 함수로 지정
 
 
+> ByteSizeValidator
+
 ```
 package com.test.www;
 
@@ -74,6 +95,7 @@ public class ByteSizeValidator implements ConstraintValidator<ByteSize, String>{
 
 		} catch (UnsupportedEncodingException e) {
 			log.warn("ByteSizeValidator.isValid() UnsupportedEncodingException " + e);
+			valueUtf8Length = max + 1;
 		}
 
 		// min 보다 작거나 max 보다 크면 실패
@@ -100,3 +122,66 @@ public class ByteSizeValidator implements ConstraintValidator<ByteSize, String>{
 * @ByteSize 지정된 필드의 값은 isValid() 의 value 매개변수로 인입됨.
 * return false : 검증 실패 return true : 검증 성공
 * 위 예시는 입력된 값 utf-8로 변환하여 byte 검증하는 로직
+
+***
+
+### validation annotation 활용
+
+> controller or service
+
+```
+@Valid() AdminBoardVo adminBoardVo
+@Validated(AdminMarker.boardList.class) AdminBoardVo adminBoardVo
+```
+
+* @Validated(AdminMarker.boardList.class) 지정 시 groups 에 지정된 클래스가 동일한 필드만 검증함.
+
+> vo
+
+```
+@NotNull(message = Constants.NULL_REQUEST_BOARD_SEQ, groups = { AdminMarker.boardRead.class,
+			AdminMarker.boardDelete.class, AdminMarker.boardList.class })
+```
+
+* message 지정 시 에러문구 변경 가능
+* groups 지정된 클래스가 동일한 경우 검증
+
+> marker class 생성 예
+
+```
+public class AdminMarker {
+
+	public interface boardCreate{};
+	public interface boardModify{};
+
+}
+```
+
+***
+
+### 에러 처리
+
+> 에러 직접 처리
+
+```
+@Validated(AdminMarker.boardList.class) AdminBoardVo adminBoardVo, BindingResult bindingResult
+
+
+// validation 체크된 경우 screenException 발생시킴.
+	if (bindingResult.hasErrors()) {
+		throw new ScreenException(bindingResult.getFieldError().getDefaultMessage(),
+				ErrorCode.INVALID_INPUT_VALUE);
+	}
+```
+
+* 메서드 인자값 지정 시 검증 객체 뒤에 BindingResult 지정하면 에러내용 담김
+* 메서드 내부에서 bindingResult.hasErrors() 로 exception 처리 가능
+
+> @ControllerAdvice 로 처리
+
+```
+@ExceptionHandler(BindException.class)
+```
+
+* BindException 발생하므로 해당 익셉션으로 핸들링
+* 공통으로 처리하므로 최초 구성 후 신경 쓸 필요 없음.
