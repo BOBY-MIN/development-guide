@@ -185,3 +185,78 @@ public class AdminMarker {
 
 * BindException 발생하므로 해당 익셉션으로 핸들링
 * 공통으로 처리하므로 최초 구성 후 신경 쓸 필요 없음.
+
+***
+
+### custom validation 추가
+Validator 인터페이스 구현(List<?> 객체 검증을 위한)
+
+> CustomCollectionValidator
+
+```
+package test;
+
+import java.util.Collection;
+
+import javax.validation.Validation;
+
+import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.SpringValidatorAdapter;
+
+@Component
+public class CustomCollectionValidator implements Validator {
+
+	// VO에 지정된 validation 제약조건을 그대로 준용하기 위해
+	private SpringValidatorAdapter validator;
+
+    public CustomCollectionValidator() {
+        this.validator = new SpringValidatorAdapter(
+                Validation.buildDefaultValidatorFactory().getValidator()
+        );
+    }
+	//
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return true;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        if(target instanceof Collection){
+            Collection<?> collection = (Collection<?>) target;
+
+            for (Object object : collection) {
+                validator.validate(object, errors);
+            }
+        } else {
+            validator.validate(target, errors);
+        }
+
+    }
+
+}
+
+```
+
+> Controller or Service 사용 예
+
+```
+	// 메서드 인자값으로 전달된 List 객체를 검증
+	customCollectionValidator.validate(memberDtos, bindingResult);
+
+    if (bindingResult.hasErrors()) {
+        throw new BindException(bindingResult);
+    }
+```
+
+* custom 객체에 정의된 validation 제약 조건을 그대로 사용 가능
+
+
+* 출처
+
+1. https://github.com/HomoEfficio/dev-tips/wiki/SpringMVC%EC%97%90%EC%84%9C-Collection%EC%9D%98-Validation
+
+2. <https://gompangs.tistory.com/entry/Spring-Valid-Collection-Validation-%EA%B4%80%EB%A0%A8>
