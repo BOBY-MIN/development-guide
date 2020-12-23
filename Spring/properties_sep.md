@@ -12,7 +12,10 @@ classpath:properties/${spring.profiles.active}/logback.xml
 > root-context.xml
 
 ```
-classpath:properties/#{systemProperties['spring.profiles.active']}/config.properties
+<util:properties id="config" location="classpath:properties/#{systemProperties['spring.profiles.active']}/config.properties" />
+
+사용 예
+<property name="username" value="#{config['db.username']}"></property>
 ```
 
 * classpath : src/main/java, src/main/resources 를 말함.

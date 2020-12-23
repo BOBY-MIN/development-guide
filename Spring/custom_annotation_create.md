@@ -159,9 +159,9 @@ public class AdminMarker {
 
 ***
 
-### 에러 처리
+### Exception 처리
 
-> 에러 직접 처리
+> exception 직접 처리
 
 ```
 @Validated(AdminMarker.boardList.class) AdminBoardVo adminBoardVo, BindingResult bindingResult
@@ -174,7 +174,7 @@ public class AdminMarker {
 	}
 ```
 
-* 메서드 인자값 지정 시 검증 객체 뒤에 BindingResult 지정하면 에러내용 담김
+* 메서드 인자값 지정 시 검증 객체 뒤에 BindingResult 지정하면  exception 내용 담김
 * 메서드 내부에서 bindingResult.hasErrors() 로 exception 처리 가능
 
 > @ControllerAdvice 로 처리
