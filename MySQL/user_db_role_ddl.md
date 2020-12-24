@@ -1,3 +1,29 @@
+> root 계정 외부 IP허용
+
+```
+-- 사용자 확인
+select host, user, plugin, authentication_string, password_last_changed from mysql.user;
+
+-- 사용자 생성
+# INSERT INTO mysql.user (host,user,authentication_string,ssl_cipher, x509_issuer, x509_subject) VALUES ('111.222.33.44','root','','','','');
+
+-- 비밀번호 변경
+# alter user 'root'@'localhost' identified WITH mysql_native_password by 'pw123';
+  : mysql_native_password : 공개키 요구 안함.
+  : caching_sha2_password : 공개키 요구함.
+
+-- 권한 부여
+# GRANT ALL PRIVILEGES ON *.* TO '아이디'@'111.222.33.44';
+
+-- 권한 즉시 반영
+# FLUSH PRIVILEGES;
+```
+
+* FLUSH PRIVILEGES; 는 중간에 한 번씩 수행해주기
+* caching_sha2_password 로 설정 시에는 dataSource url 셋팅 시 아래 설정값 추가해야 함.
+  + useSSL=false&allowPublicKeyRetrieval=true
+
+
 ### 데이타베이스 관리
 
 > 생성
@@ -71,7 +97,7 @@ REVOKE 'role_name'@'hos' FROM 'user_name'@'host';
 > 생성
 
 ```
-CREATE USER 'user_name'@'host' IDENTIFIED BY 'password' DEFAULT ROLE 'role_name'@'host';
+CREATE USER 'user_name'@'host' IDENTIFIED WITH mysql_native_password BY 'password' DEFAULT ROLE 'role_name'@'host';
 ```
 
 * 유저 권한 부여 후 아래 명령어 수행해야 즉시 적용 됨
