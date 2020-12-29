@@ -13,7 +13,9 @@ select host, user, plugin, authentication_string, password_last_changed from mys
   : caching_sha2_password : 공개키 요구함.
 
 -- 권한 부여
-# GRANT ALL PRIVILEGES ON *.* TO '아이디'@'111.222.33.44';
+# GRANT ALL PRIVILEGES ON *.* TO '아이디'@'111.222.33.44' WITH GRANT OPTION;
+  : WITH GRANT OPTION : 부여 받은 권한을 다른 사용자에게 부여할 수 있도록 함.
+  : ALL PRIVILEGES -> ALL 로 대체 가능
 
 -- 권한 즉시 반영
 # FLUSH PRIVILEGES;
@@ -22,6 +24,7 @@ select host, user, plugin, authentication_string, password_last_changed from mys
 * FLUSH PRIVILEGES; 는 중간에 한 번씩 수행해주기
 * caching_sha2_password 로 설정 시에는 dataSource url 셋팅 시 아래 설정값 추가해야 함.
   + useSSL=false&allowPublicKeyRetrieval=true
+* 출처 : https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_all
 
 
 ### 데이타베이스 관리

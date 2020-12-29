@@ -30,11 +30,13 @@ default-character-set=utf8
 default-character-set=utf8
 
 [mysqld]
-character-set-server=utf8
-collation-server=utf8_general_ci
-init_connect=SET collation_connection = utf8_general_ci
-init_connect=SET NAMES utf8
+character-set-server=utf8md4
+collation-server=utf8md4_general_ci
+init_connect=SET collation_connection = utf8md4_general_ci
+init_connect=SET NAMES utf8md4
 ```
+
+* mysql8은 utf8md3, utf8md4 으로 구분됨. 문자셋 3byte, 4byte 구분
 
 > full text search 단어분리 최소자리수
 
