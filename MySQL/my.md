@@ -38,9 +38,31 @@ init_connect=SET NAMES utf8md4
 
 * mysql8은 utf8md3, utf8md4 으로 구분됨. 문자셋 3byte, 4byte 구분
 
-> full text search 단어분리 최소자리수
+> 그 외
 
 ```
+-- full text search 단어분리 최소자리수
 [mysqld]
 ft_min_word_len=2
+
+-- linux database, table 소문자 저장 / 조회 시 대소문자 구분없이 조회
+-- 설정 후 생성된 db와 table에만 적용
+[mysqld]
+lower_case_table_names=1
+
+
+-- 최초 설정
+[mysqld]
+basedir=/home/was/mysql
+datadir=/home/was/mysql/data
+
+socket=/home/was/mysql/socket/mysql.sock
+
+log-error=/home/was/mysql/log/mysqld.log
+pid-file=/home/was/mysql/run/mysqld/mysqld.pid
+
+[mysqld_safe]
+
+log-error=/home/was/mysql/log/mysqld.log
+pid-file=/home/was/mysql/run/mysqld/mysqld.pid
 ```

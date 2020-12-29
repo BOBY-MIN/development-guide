@@ -25,16 +25,20 @@ $ systemctl enable mysqld.service
 
 ```
 -- mysql 서비스 시작
-
+$ cd mysql.server 위치 경로
+$ ./mysql.server start &
 
 -- mysql 서비스 종료
-
+$ cd mysql.server 위치 경로
+$ ./mysql.server stop
 
 -- mysql 서비스 재시작
-
+$ cd mysql.server 위치 경로
+$ ./mysql.server reload &
 
 -- mysql 상태 확인
-
+$ cd mysql.server 위치 경로
+$ ./mysql.server status
 
 -- 부팅 시 자동 시작 등록
 

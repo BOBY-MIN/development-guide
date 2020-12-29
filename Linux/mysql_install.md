@@ -59,38 +59,27 @@ $ vi /home/was/mysql/etc/rc.d/init.d/mysqld
   conf=/home/mysql/mysql/etc/my.cnf
 
 $ vi /home/was/mysql/etc/my.cnf
-  [mysqld]
-  basedir=/home/was/mysql
-  datadir=/home/was/mysql/data
-
-  socket=/home/was/mysql/socket/mysql.sock
-
-  log-error=/home/was/mysql/log/mysqld.log
-  pid-file=/home/was/mysql/run/mysqld/mysqld.pid
-
-  character-set-server=utf8mb4
-  collation-server=utf8mb4_general_ci
-  init_connect=SET collation_connection = utf8mb4_general_ci
-  init_connect=SET NAMES utf8mb4
-
-  [mysqld_safe]
-
-  log-error=/home/was/mysql/log/mysqld.log
-  pid-file=/home/was/mysql/run/mysqld/mysqld.pid
+  : my.md 참고
 
 
 -- mysql 초기화(mysql 설치 경로에서 수행)
-$ bin/mysqld --user=was --initialize-insecure --default-file=/home/was/mysql/etc/my.cnf --console
+$ bin/mysqld --user=was --initialize-insecure --default-file=/home/was/mysql/etc/my.cnf --lower_case_table_names=1 --console
   : mysql_isntall_db deprecated 된 후 --initialize 로 초기화
+  : --lower_case_table_names=1 테이블명 대소문자 구분없도록 함.
 
 -- mysqld 실행
 $ cd /mysql/supprot-files
-$ ./mysql.server start --skip-grant-tables
+$ ./mysql.server start --skip-grant-tables &
   : --skip-grant-tables 로 실행 안하면 초기에는 error 발생함.
   : my.cnf 내 datadir, socket, pid-file, log-error 디렉토리 경로 미리 생성 필요
+  : & 백그라운드로 실행
 
 $ mysql 로 접속 가능
 $ show databases;
+  : mysql 접속 후 mysql db 내 table 모두 수동으로 생성 필요
+  : mysql.user 에 mysql.infoschema, mysql.session, mysql.sys, root localhost 권한 부여 필요 -> 비번 없이 insert 후 alter 로 비번 변경(user_db_role_ddl.md 참고)
+
+
 ```
 
 
@@ -113,6 +102,7 @@ $ show databases;
 
 * 1차 에러
 
+```
 It fails with the following output:
 
 Change Dir: /home/was/install/mysql-8.0.18/build_target/CMakeFiles/CMakeTmp
@@ -125,6 +115,7 @@ cc: error: unrecognized command line option ‘-02’
 gmake[1]: *** [CMakeFiles/cmTC_d1565.dir/testCCompiler.c.o] Error 1
 gmake[1]: Leaving directory `/home/was/install/mysql-8.0.18/build_target/CMakeFiles/CMakeTmp'
 gmake: *** [cmTC_d1565/fast] Error 2
+```
 
 ```
 cmake 구문 에러로 속성값 확인(위 최종 cmake 구문으로는 정상 수행됨.)
@@ -134,10 +125,12 @@ cmake 구문 에러로 속성값 확인(위 최종 cmake 구문으로는 정상 
 
 * 2차 에러
 
+```
 CMake Error at cmake/os/Linux.cmake:59 (MESSAGE):
   GCC 5.3 or newer is required (-dumpversion says 4.8.5)
 Call Stack (most recent call first):
   CMakeLists.txt:442 (INCLUDE)
+```
 
 ```
 gcc 버전 업그레이드로 해결
@@ -147,6 +140,7 @@ gcc 버전 업그레이드로 해결
 
 * 3차 에러
 
+```
 CMake Error at cmake/boost.cmake:104 (MESSAGE):
   You can download it with -DDOWNLOAD_BOOST=1 -DWITH_BOOST=<directory>
 
@@ -159,6 +153,7 @@ CMake Error at cmake/boost.cmake:104 (MESSAGE):
   If you are inside a firewall, you may need to use an https proxy:
 
   export https_proxy=http://example.com:80
+```
 
 ```
 tar.gz 파일 boost headers 포함된 버전으로 변경하여 해결
@@ -168,6 +163,7 @@ tar.gz 파일 boost headers 포함된 버전으로 변경하여 해결
 
 * 4차 에러
 
+```
 CMake Error at cmake/readline.cmake:71 (MESSAGE): Curses library not found.  Please install appropriate package,
 
 remove CMakeCache.txt and rerun cmake.On Debian/Ubuntu, package name is libncurses5-dev, on Redhat and derivates it is ncurses-devel.
@@ -175,6 +171,7 @@ Call Stack (most recent call first):
 cmake/readline.cmake:100 (FIND_CURSES)
 cmake/readline.cmake:194 (MYSQL_USE_BUNDLED_EDITLINE)
 CMakeLists.txt:1185 (MYSQL_CHECK_EDITLINE)
+```
 
 ```
 ncurses-devel 라이브러리 설치로 해결
