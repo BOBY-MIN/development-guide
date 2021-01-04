@@ -20,3 +20,6 @@
 5. ../cmake --version
   : 버전 확인
 ```
+
+* cmake configure option 참고 사이트
+  - https://dev.mysql.com/doc/mysql-sourcebuild-excerpt/5.7/en/source-configuration-options.html

@@ -1,5 +1,5 @@
 
-$$$ centos7 mysql 인스톨
+### centos7 mysql 인스톨
 
 * centos7 은 red hat enterprise linux 7 과 동일함.
 

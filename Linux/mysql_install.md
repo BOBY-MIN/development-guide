@@ -1,5 +1,5 @@
 
-$$$ centos7 mysql 인스톨(일반계정)
+### centos7 mysql 인스톨(일반계정)
 
 * centos7 은 red hat enterprise linux 7 과 동일함.
 * 설치 전 boost 1.7 이상, gcc 5.4 이상, cmake 3.15 이상 설치 필요
@@ -43,6 +43,9 @@ $ vi ~/.bash_profile
   export MYSQL_HOME=/home/was/mysql
   export PATH=$MYSQL_HOME/bin:$PATH
   export LD_LIBRARY_PATH=$MYSQL_HOME/lib:$LD_LIBRARY_PATH
+
+-- 설정 바로적용
+$ source ~/.bash_profile
 
 $ cd /home/was/mysql/support-files
 $ cp mysql.server /home/was/mysql/etc/rc.d/init.d/mysqld
@@ -90,6 +93,7 @@ $ show databases;
   real mysql, 이성욱 저
   https://dev.mysql.com/doc/refman/8.0/en/data-directory-initialization.html
   https://mozi.tistory.com/78
+  https://dev.mysql.com/doc/mysql-sourcebuild-excerpt/5.7/en/source-configuration-options.html
 ```
 
 
