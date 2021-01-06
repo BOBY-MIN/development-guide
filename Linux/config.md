@@ -14,8 +14,6 @@
 * visudo -f sudoers 로 편집 권장
 * sudo visudo -f /mnt/etc/sudoers
 
-<br>
-
 > /etc/passwd
 
 ```
@@ -30,3 +28,8 @@ root:x:0:0:root:/root:/bin/bash
 ```
 
 * 현재 계정정보들 조회
+
+
+> ~/.bash_profile
+
+* 계정별 환경설정 파일
