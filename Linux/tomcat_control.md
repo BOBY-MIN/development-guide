@@ -14,5 +14,5 @@ $ /home/was/tomcat/apache-tomcat-8.5.60/bin/startup.sh
 $ /home/was/tomcat/apache-tomcat-8.5.60/bin/shutdown.sh
 
 -- 서버 로그 보기
-$ vi /home/was/tomcat/apache-tomcat-8.5.60/logs/catalina.2021-01-04.log
+$ vi /home/was/tomcat/apache-tomcat-8.5.60/logs/catalina.2021-01-05.log
 ```
