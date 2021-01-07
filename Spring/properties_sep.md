@@ -42,3 +42,5 @@ setenv.bat 파일 생성 후 아래와 같이 작성
 
   JAVA_OPTS=%JAVA_OPTS% -Dspring.profiles.active={profile_name}
 ```
+
+* 출처 : https://feco.tistory.com/106

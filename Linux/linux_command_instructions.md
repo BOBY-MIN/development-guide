@@ -103,4 +103,8 @@ $ rm [옵션] [파일명]
 $ unzip [war/jar/zip] [옵션]
   : zip 해제
   : unzip ~~~.war -d /tmp : tmp 에 ~~~.war 해제
+
+$ cat [옵션] [filename]
+  : [filename] file1 file2 file3 여러 파일 한 번에 보기
+  : [-n] file 번호 추가
 ```
