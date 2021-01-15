@@ -5,12 +5,18 @@
 
 ```
 <dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-validation</artifactId>
-		<version>2.4.0</version>
+	<groupId>javax.validation</groupId>
+  <artifactId>validation-api</artifactId>
+  <version>2.0.1.Final</version>
+</dependency>
+<dependency>
+	<groupId>org.hibernate.validator</groupId>
+	<artifactId>hibernate-validator</artifactId>
+	<version>6.2.0.Final</version>
 </dependency>
 ```
 
+* spring-starter 로 dependency 해도 되지만 권장하지 않음.
 * spring validation annotation 을 위해 dependency 추가
 
 ***

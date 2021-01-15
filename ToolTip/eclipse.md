@@ -19,3 +19,13 @@
 ```
 
 * localRepository 태그 내용이 경로
+
+
+> anyEdit 플러그인
+
+```
+ctrl + alt + k : camel
+ctrl + shift + x : 대문자
+ctrl + shift + y : 소문자
+ctrl + shift + l : 텍스트찾기
+```

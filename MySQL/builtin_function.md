@@ -1,18 +1,41 @@
 ## oracle 대비 mysql 내장함수
 
-### nvl
+> nvl
+
 ```
 COALESCE('비교 컬럼', 'null 대체')
 ```
 
-### to_date
+> to_date
+
 ```
 DATE_FORMAT('컬럼', '형식')
 ```
 * '%Y-%m-%d' : YYYYMMDD
 * '%Y년 %m월 %d일' : YYYY년 MM월 DD일
 
-### ||
+> ||
+
 ```
 CONCAT('%', 'test', '%')
+```
+
+> DATE_ADD / DATE_SUB
+
+```
+- 더하기
+SELECT DATE_ADD(NOW(), INTERVAL 1 SECOND);
+SELECT DATE_ADD(NOW(), INTERVAL 1 MINUTE);
+SELECT DATE_ADD(NOW(), INTERVAL 1 HOUR);
+SELECT DATE_ADD(NOW(), INTERVAL 1 DAY);
+SELECT DATE_ADD(NOW(), INTERVAL 1 MONTH);
+SELECT DATE_ADD(NOW(), INTERVAL 1 YEAR);
+
+- 빼기
+SELECT DATE_SUB(NOW(), INTERVAL 1 SECOND);
+SELECT DATE_SUB(NOW(), INTERVAL 1 MINUTE);
+SELECT DATE_SUB(NOW(), INTERVAL 1 HOUR);
+SELECT DATE_SUB(NOW(), INTERVAL 1 DAY);
+SELECT DATE_SUB(NOW(), INTERVAL 1 MONTH);
+SELECT DATE_SUB(NOW(), INTERVAL 1 YEAR);
 ```

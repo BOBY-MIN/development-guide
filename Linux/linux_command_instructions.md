@@ -107,4 +107,11 @@ $ unzip [war/jar/zip] [옵션]
 $ cat [옵션] [filename]
   : [filename] file1 file2 file3 여러 파일 한 번에 보기
   : [-n] file 번호 추가
+
+
+$ grep [옵션] [정규표현식(문자열)] [찾기 대상이 될 파일명]
+
+ex)  grep -r '*찾을 문자열*' ./*
+
+출처: https://unabated.tistory.com/entry/grep-egrep-fgrep-정규식 [랄라라]
 ```

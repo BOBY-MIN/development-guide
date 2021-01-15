@@ -32,7 +32,9 @@
 * artifact id 가 프로젝트명으로 사용됨.
 
 
-* export java source files and resources 는 소스까지 넘어가므로 미체크
+* 이클립스 export 로 배포 시 export java source files and resources 는 소스까지 넘어가므로 미체크
+
+<br>
 
 > maven project jar 배포(dependency 라이브러리 포함)
 
