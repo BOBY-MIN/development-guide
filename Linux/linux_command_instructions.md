@@ -115,3 +115,14 @@ ex)  grep -r '*찾을 문자열*' ./*
 
 출처: https://unabated.tistory.com/entry/grep-egrep-fgrep-정규식 [랄라라]
 ```
+
+> crontab
+
+* linux 용 스케줄러로 동시 트래픽 테스트 가능
+* 주기 지정 후 batch 수행 가능
+
+```
+$ crontab -e : crontab 편집
+$ crontab -l : crontab 확인
+
+```
