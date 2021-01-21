@@ -51,6 +51,13 @@ ft_min_word_len=2
 lower_case_table_names=1
 
 
+-- for update 사용 시 대기시간 설정(초)(mysql은 wait 시간 지정 불가능하므로 아래 변수로 셋팅)
+-- 서버 재기동 필요함
+[mysqld]
+innodb_lock_wait_timeout=10
+
+
+
 -- 최초 설정
 [mysqld]
 basedir=/home/was/mysql

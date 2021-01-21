@@ -21,11 +21,22 @@
 * localRepository 태그 내용이 경로
 
 
-> anyEdit 플러그인
+> 단축키
 
 ```
+--  anyEdit 플러그인 설치 후 사용 가능
 ctrl + alt + k : camel
 ctrl + shift + x : 대문자
 ctrl + shift + y : 소문자
 ctrl + shift + l : 텍스트찾기
+
+
+-- 이클립스 범용
+ctrl + shift + { : 같은 소스 분할
+
+ctrl + alt + H : 메서드 호출 보기 (Call Hierarchy)
+ctrl + shift + R : 리소스 찾기
+
+** 단축키 등록방법
+window > preferences > general > keys 에서 등록
 ```
