@@ -182,26 +182,30 @@ public class LogbackLayoutUtil extends LayoutBase<ILoggingEvent> {
 		}
 
 
-		String message = event.getFormattedMessage();
+    String message = event.getFormattedMessage();
+		String line = System.lineSeparator();
 
 		// 개행이 포함되어 있다면 split하여 앞에 접두사 지정
 		if(message.contains("\n")) {
 			String[] splitMessage = message.split("\n");
 
 			for(String arg : splitMessage) {
+
 				if(prefix) {
 					sbuf.append(loggerHeaderInfo);
 				}
+
 				sbuf.append(arg);
+				sbuf.append(line);
 			}
 
-			sbuf.append("\n");
 		}else {
 			if(prefix) {
 				sbuf.append(loggerHeaderInfo);
 			}
+
 			sbuf.append(message);
-			sbuf.append("\n");
+			sbuf.append(line);
 		}
 
 
