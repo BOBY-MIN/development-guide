@@ -11,8 +11,9 @@ COALESCE('비교 컬럼', 'null 대체')
 ```
 DATE_FORMAT('컬럼', '형식')
 ```
-* '%Y-%m-%d' : YYYYMMDD
+* '%Y-%m-%d' : YYYY-MM-DD
 * '%Y년 %m월 %d일' : YYYY년 MM월 DD일
+* '%Y%m%d%H%i%s' : YYYYMMDDHHMMSS
 
 > ||
 
