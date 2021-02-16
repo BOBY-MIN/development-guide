@@ -11,7 +11,7 @@ $ wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.60/bin/apache-tomcat
 > 압축해제
 
 ```
-$ tar -zxvf jdk-8u271-linux-x64.tar.gz
+$ tar -zxvf apache-tomcat-8.5.60.tar.gz
 ```
 
 > 환경변수 설정
