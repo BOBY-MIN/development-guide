@@ -40,3 +40,10 @@ ctrl + shift + R : 리소스 찾기
 ** 단축키 등록방법
 window > preferences > general > keys 에서 등록
 ```
+
+> tomcat server에 spring mvc project 등록 안되는 경우
+
+* SVN 에서 check out 받은 후 간혹 tomcat server 에 등록 안되는 경우 있음(spring mvc project 로 생성한 프로젝트에 대해서)
+* 위와 같은 현상 시에는 아래와 같이 처리
+  + Windows > Preferences > Server > Runtime Environments 에 tomcat 서버 등록
+  + 프로젝트 우클릭 > Run As > Run On Server 에서 등록한 tomcat 서버 선택
