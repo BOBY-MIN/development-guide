@@ -1,4 +1,24 @@
 
+> 플러그인 목록
+
+```
+anyEdit : 대소문자, 카멜표기법 변경
+Subclipse : SVN
+  1 Windows > Perspective > Customize Perspective 이동
+  2 Action Set Availability tab 선택 후 SVN 체크
+  3 Apply and Close
+
+Spring Tools 3 Add-On for Spring Tools 4 : spring3 프로젝트 생성
+
+Enhanced Class Decompiler : class 디컴파일
+  1 Window > Preferences 이동
+  2 java > Decompiler Default Class Decompiler FernFlower(Support JDK8) 선택
+  3 General > Editors > File Associations 이동
+    3-1 *.class 선택 후 하단 Associated editors 에서 Class Decompiler Viewer Default 지정
+    3-2 *.class without source 선택 후 하단 Associated editors 에서 Class Decompiler Viewer Default 지정
+  4 Apply and Close
+```
+
 > maven repositoty 경로 변경
 
 ```
