@@ -63,7 +63,24 @@ window > preferences > general > keys 에서 등록
 
 > tomcat server에 spring mvc project 등록 안되는 경우
 
-* SVN 에서 check out 받은 후 간혹 tomcat server 에 등록 안되는 경우 있음(spring mvc project 로 생성한 프로젝트에 대해서)
-* 위와 같은 현상 시에는 아래와 같이 처리
+* SVN 에서 check out 받은 후 간혹 tomcat server 에 프로젝트가 등록 안되는 경우 있음(spring mvc project 로 생성한 프로젝트에 대해서)
+
+1. 위와 같은 현상 시에는 아래와 같이 처리
   + Windows > Preferences > Server > Runtime Environments 에 tomcat 서버 등록
   + 프로젝트 우클릭 > Run As > Run On Server 에서 등록한 tomcat 서버 선택
+
+
+2. 1번으로 안되는 경우 아래와 같이 처리
+  + Windows > Preferences > Server > Runtime Environments 에 tomcat 서버 등록
+  + 프로젝트 우클릭 > Properties > Project Facets 이동
+    - Dynamic Web Module 체크 후 2.5 변경
+    - Java 체크 1.8 변경
+    - JavaScript 체크 1.0 변견
+    <br> ※ 본인 프로젝트 버전에 맞추기
+  + Apply 클릭 전 하단 Further configuration available 항목 클릭
+  + Source folders on build path 설정은 build 항목이니 그대로 두고 Next
+  + Context root 는 그대로, Content directory src\main\webapp 으로 변경 후 OK
+  + Prject Facets Apply
+  + server에서 해당 프로젝트 추가 가능
+
+* 출처 : https://roxxy.tistory.com/m/entry/Spring-eclipse-Tomcat%EC%97%90-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%B6%94%EA%B0%80-%EC%95%88%EB%90%A0-%EB%95%8C
