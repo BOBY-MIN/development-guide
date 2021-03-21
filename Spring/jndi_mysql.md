@@ -124,3 +124,4 @@
 
 * GlobalNamingResources 태그 내에 추가
 * linux $CATALINA_HOME/conf/server.xml
+* 위 속성 셋팅 관련 내용 참고 http://tomcat.apache.org/tomcat-8.5-doc/jndi-resources-howto.html
