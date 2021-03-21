@@ -1,6 +1,10 @@
 
 ### JNDI connection pool 변경
 
+
+
+#### spring maven 방식
+
 * tomcat 8.5.60 - mysql 8.0.18
 * datasource manager 방식 -> JNDI 방식 변경으로 이미 db 설정 되어 있다고 전제
 * tomcat/lib 폴더 내 mysql-connector-java-8.0.18.jar 파일 복사
@@ -78,6 +82,38 @@
 </resource-ref>
 <!-- JNDI stop -->
 ```
+
+
+****
+
+
+#### springboot gradle 방식
+
+* tomcat 8.5.60 - mysql 8.0.18
+* tomcat/lib 폴더 내 mysql-connector-java-8.0.18.jar 파일 복사
+
+> application.yml
+
+```
+# mySql jndi 방식 연결
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jndi-name: java:/comp/env/jdbc/jndiname
+
+```
+
+> build.gradle
+
+```
+implementation 'mysql:mysql-connector-java:8.0.18'
+implementation 'org.apache.tomcat:tomcat-dbcp:8.5.60'
+```
+
+****
+
+#### tomcat 설정(spring / spring boot 동일)
+
 
 > tomcat/context.xml
 
