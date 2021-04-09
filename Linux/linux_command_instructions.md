@@ -126,4 +126,8 @@ ex)  grep -r '*찾을 문자열*' ./*
 $ crontab -e : crontab 편집
 $ crontab -l : crontab 확인
 
+-- 작성 예
+-- 수행간격 호출내용
+*/1 * * * * curl ip:port/test.jsp?IssueCount=1&CancelBit=0
+
 ```
