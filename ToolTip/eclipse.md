@@ -56,6 +56,8 @@ ctrl + shift + { : 같은 소스 분할
 
 ctrl + alt + H : 메서드 호출 보기 (Call Hierarchy)
 ctrl + shift + R : 리소스 찾기
+ctrl + O : 클래스 메서드 보기
+alt + enter : 자원확인
 
 ** 단축키 등록방법
 window > preferences > general > keys 에서 등록
