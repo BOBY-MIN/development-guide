@@ -62,10 +62,13 @@ D:\devPy> devenv\Scripts\deactivate
 
 -- model 초기화
 (devenv) D:\devMin\git\django_dev\devmysite\src> python manage.py migrate
-(devenv) D:\devMin\git\django_dev\devmysite\src> python manage.py makemigrations
+(devenv) D:\devMin\git\django_dev\devmysite\src> python manage.py makemigrations [app name]
 
+-- admin 유저 생성
+(devenv) D:\devMin\git\django_dev\devmysite\src> python manage.py createsuperuser
 ```
 
+<br>
 
 > 이클립스 pyDev 로 프로젝트 에러 모음
 
