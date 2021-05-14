@@ -10,6 +10,8 @@
 
 		<interceptor>
 			<mapping path="/**"/>
+			<exclude-mapping path="/auth/**"/>
+			<exclude-mapping path="/resources/**"/>
 			<beans:ref bean="loggingInterceptor"/>
 		</interceptor>
 
@@ -17,6 +19,8 @@
 ```
 
 * mapping path /** 모든 호출에 적용
+* exclude-mapping path 인터셉터 미적용 서비스 기재
+	+ css와 같은 정적파일 로드 시에도 interceptor 적용되므로 인터셉터 불필요 시 정적파일 경로도 제외항목에 추가
 * Namespaces 에 mvc 추가 필요
 
 

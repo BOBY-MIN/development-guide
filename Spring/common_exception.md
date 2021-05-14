@@ -60,6 +60,18 @@ public class CommonExceptionAdvice {
 		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 	}
 
+	/**
+	 * javax.validation.Valid or @Validated 으로 binding error 발생시 발생한다.
+	 * HttpMessageConverter 에서 등록한 HttpMessageConverter binding 못할경우 발생
+	 * 주로 @RequestBody, @RequestPart 어노테이션에서 발생
+	 */
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	protected ResponseEntity<ErrorResponse> handleMethodArgumentNotValidExceptionException(MethodArgumentNotValidException e) {
+		log.warn("MethodArgumentNotValidException", e);
+		final ErrorResponse response = ErrorResponse.of(ErrorCode.INVALID_INPUT_VALUE, e.getBindingResult());
+		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+	}
+
 	@ExceptionHandler(BusinessException.class)
 	protected ResponseEntity<ErrorResponse> handleBusinessException(final BusinessException e) {
 		log.warn("handleBusinessException", e);

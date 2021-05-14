@@ -16,3 +16,12 @@ function getByteLengthUtf8(str) {
 * 출처 : https://gist.github.com/mathiasbynens/1010324
 
 ***
+
+### 왼쪽에 0 채우기
+
+```
+var lapdTest = ("0" + (1)).slice(-2)
+console.log("debug___ lapdTest " + lapdTest);
+
+> debug___ lapdTest 01
+```
