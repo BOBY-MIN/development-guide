@@ -3,6 +3,11 @@
 
 * spring-security CORS 정책 설정 내용도 추가 확인(https://vvshinevv.tistory.com/62)
 
+> ip, 서브넷마스크 정리
+
+
+
+
 
 #### charset 과 encoding (urlEncoding / Base64Encoding)
 
