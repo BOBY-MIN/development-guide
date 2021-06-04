@@ -1,10 +1,14 @@
 
-> CORS 정책 Access-Control-Allow-Origin
-
-* spring-security CORS 정책 설정 내용도 추가 확인(https://vvshinevv.tistory.com/62)
-
 
 #### charset 과 encoding (urlEncoding / Base64Encoding)
+
+> charset
+
+```
+문자집합으로 인코딩하는 방식을 정할 수 있음.
+utf-8, ascii, unicode 등
+```
+
 
 
 > urlEncoding (percent-encoding)
