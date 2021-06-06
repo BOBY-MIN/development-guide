@@ -19,7 +19,7 @@
     Access-Control-Allow-Headers : 요청을 허용하는 헤더
 
 
-- CORS 사용 종류
+- CORS 사용 종류 
   * Simple Request
     다음 3가지를 만족하는 통신 방식
       1. GET, HEAD, POST 중 한 가지 방식을 사용
