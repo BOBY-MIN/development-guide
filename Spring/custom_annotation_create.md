@@ -76,6 +76,8 @@ import java.io.UnsupportedEncodingException;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+import org.springframework.util.StringUtils;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -88,6 +90,10 @@ public class ByteSizeValidator implements ConstraintValidator<ByteSize, String>{
 	public boolean isValid(String value, ConstraintValidatorContext context) {
 
 		log.debug("ByteSizeValidator.isValid() 호출");
+
+		if(StringUtils.isEmpty(value)) {
+			return true;
+		}
 
 		// UTF-8로 변경하여 length 체크
 		int valueUtf8Length = 0;
