@@ -311,7 +311,11 @@ Refresh tokens are credentials used to obtain access tokens. Refresh tokens are 
  A user-agent-based application is a public client in which the client code is downloaded from a web server and executes within a user-agent (e.g., web browser) on the device used by the resource owner. Protocol data and credentials are easily accessible (and often visible) to the resource owner. Since such applications reside within the user-agent, they can make seamless use of the user-agent capabilities when requesting authorization.
 
  native application
- A native application is a public client installed and executed on the device used by the resource owner. Protocol data and credentials are accessible to the resource owner. It is assumed that any client authentication credentials included in the application can be extracted. On the other hand, dynamically issued credentials such as access tokens or refresh tokens can receive an acceptable level of protection. At a minimum, these credentials are protected from hostile servers with which the application may interact. On some platforms, these credentials might be protected from other applications residing on the same device.2.2. Client Identifier The authorization server issues the registered client a client identifier -- a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server. The client identifier string size is left undefined by this specification. The client should avoid making assumptions about the identifier size. The authorization server SHOULD document the size of any identifier it issues.
+ A native application is a public client installed and executed on the device used by the resource owner. Protocol data and credentials are accessible to the resource owner. It is assumed that any client authentication credentials included in the application can be extracted. On the other hand, dynamically issued credentials such as access tokens or refresh tokens can receive an acceptable level of protection. At a minimum, these credentials are protected from hostile servers with which the application may interact. On some platforms, these credentials might be protected from other applications residing on the same device.
+
+
+ 2.2. Client Identifier
+ The authorization server issues the registered client a client identifier -- a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server. The client identifier string size is left undefined by this specification. The client should avoid making assumptions about the identifier size. The authorization server SHOULD document the size of any identifier it issues.
 
 
 
@@ -323,8 +327,13 @@ Refresh tokens are credentials used to obtain access tokens. Refresh tokens are 
  사용자 에이전트 기반 애플리케이션
  사용자 에이전트 기반 애플리케이션은 클라이언트 코드가 웹 서버에서 다운로드되고 리소스 소유자가 사용하는 장치의 사용자 에이전트 (예 : 웹 브라우저) 내에서 실행되는 공용 클라이언트입니다. 프로토콜 데이터 및 자격 증명은 리소스 소유자가 쉽게 액세스 할 수 있으며 종종 볼 수 있습니다. 이러한 응용 프로그램은 사용자 에이전트 내에 있으므로 권한 부여를 요청할 때 사용자 에이전트 기능을 원활하게 사용할 수 있습니다.
 
- 기본 응용 프로그램
- 네이티브 애플리케이션은 리소스 소유자가 사용하는 장치에 설치 및 실행되는 공용 클라이언트입니다. 리소스 소유자는 프로토콜 데이터 및 자격 증명에 액세스 할 수 있습니다. 응용 프로그램에 포함 된 모든 클라이언트 인증 자격 증명을 추출 할 수 있다고 가정합니다. 반면에 액세스 토큰 또는 새로 고침 토큰과 같이 동적으로 발급 된 자격 증명은 허용 가능한 수준의 보호를받을 수 있습니다. 최소한 이러한 자격 증명은 애플리케이션이 상호 작용할 수있는 적대적인 서버로부터 보호됩니다. 일부 플랫폼에서는 이러한 자격 증명이 동일한 장치에있는 다른 응용 프로그램으로부터 보호 될 수 있습니다. 클라이언트 식별자 인증 서버는 등록 된 클라이언트에게 클라이언트 식별자 (클라이언트가 제공 한 등록 정보를 나타내는 고유 문자열)를 발급합니다. 클라이언트 식별자는 비밀이 아닙니다. 리소스 소유자에게 노출되며 클라이언트 인증을 위해 단독으로 사용해서는 안됩니다. 클라이언트 식별자는 권한 부여 서버에 고유합니다. 클라이언트 식별자 문자열 크기는이 사양에 정의되지 않은 상태로 남아 있습니다. 클라이언트는 식별자 크기에 대한 가정을 피해야합니다. 인증 서버는 발행하는 식별자의 크기를 문서화해야합니다.
+
+ native application
+ 네이티브 애플리케이션은 리소스 소유자가 사용하는 장치에 설치 및 실행되는 공용 클라이언트입니다. 리소스 소유자는 프로토콜 데이터 및 자격 증명에 액세스 할 수 있습니다. 응용 프로그램에 포함 된 모든 클라이언트 인증 자격 증명을 추출 할 수 있다고 가정합니다. 반면에 액세스 토큰 또는 새로 고침 토큰과 같이 동적으로 발급 된 자격 증명은 허용 가능한 수준의 보호를받을 수 있습니다. 최소한 이러한 자격 증명은 애플리케이션이 상호 작용할 수있는 적대적인 서버로부터 보호됩니다. 일부 플랫폼에서는 이러한 자격 증명이 동일한 장치에있는 다른 응용 프로그램으로부터 보호 될 수 있습니다.
+
+
+2.2. Client Identifier
+인증 서버는 등록 된 클라이언트에게 클라이언트 식별자 (클라이언트가 제공 한 등록 정보를 나타내는 고유 한 문자열)를 발급합니다. 클라이언트 식별자는 비밀이 아닙니다. 리소스 소유자에게 노출되며 클라이언트 인증을 위해 단독으로 사용해서는 안됩니다. 클라이언트 식별자는 권한 부여 서버에 고유합니다. 클라이언트 식별자 문자열 크기는이 사양에 정의되지 않은 상태로 남아 있습니다. 클라이언트는 식별자 크기에 대한 가정을 피해야합니다. 인증 서버는 발행하는 식별자의 크기를 문서화해야합니다.
 
 
 
@@ -1013,7 +1022,7 @@ HTTP response: HTTP/1.1 302 Found
  4.1.3. 액세스 토큰
  요청 클라이언트는 HTTP 요청 엔티티 본문에서 UTF-8 문자 인코딩과 함께 부록 B에 따라 "application / x-www-form-urlencoded"형식을 사용하여 다음 매개 변수를 전송하여 토큰 엔드 포인트에 요청합니다.
 
-grant_type
+ grant_type
  필수입니다. 값은 "authorization_code"로 설정해야합니다.
 
  code
@@ -1145,7 +1154,7 @@ POST /token HTTP/1.1
 
  The flow illustrated in Figure 4 includes the following steps: (A) The client initiates the flow by directing the resource owner's user-agent to the authorization endpoint. The client includes its client identifier, requested scope, local state, and a redirection URI to which the authorization server will send the user-agent back once access is granted (or denied). (B) The authorization server authenticates the resource owner (via the user-agent) and establishes whether the resource owner grants or denies the client's access request. (C) Assuming the resource owner grants access, the authorization server redirects the user-agent back to the client using the redirection URI provided earlier. The redirection URI includes the access token in the URI fragment. (D) The user-agent follows the redirection instructions by making a request to the web-hosted client resource (which does not include the fragment per [RFC2616]). The user-agent retains the fragment information locally. (E) The web-hosted client resource returns a web page (typically an HTML document with an embedded script) capable of accessing the full redirection URI including the fragment retained by the user-agent, and extracting the access token (and other parameters) contained in the fragment. (F) The user-agent executes the script provided by the web-hosted client resource locally, which extracts the access token. (G) The user-agent passes the access token to the client. See Sections 1.3.2 and 9 for background on using the implicit grant. See Sections 10.3 and 10.16 for important security considerations when using the implicit grant.
 
- 그림 4에 표시된 흐름에는 다음 단계가 포함됩니다. (A) 클라이언트는 리소스 소유자의 사용자 에이전트를 권한 부여 끝점으로 보내 흐름을 시작합니다. 클라이언트에는 클라이언트 식별자, 요청 된 범위, 로컬 상태 및 액세스가 허용 (또는 거부)되면 권한 부여 서버가 사용자 에이전트를 다시 보낼 리디렉션 URI가 포함됩니다. (B) 권한 부여 서버는 사용자 에이전트를 통해 리소스 소유자를 인증하고 리소스 소유자가 클라이언트의 액세스 요청을 허용 또는 거부할지 여부를 설정합니다. (C) 리소스 소유자가 액세스 권한을 부여한다고 가정하면 권한 부여 서버는 이전에 제공된 리디렉션 URI를 사용하여 사용자 에이전트를 클라이언트로 다시 리디렉션합니다. 리디렉션 URI는 URI 조각에 액세스 토큰을 포함합니다. (D) 사용자 에이전트는 웹 호스팅 클라이언트 리소스 ([RFC2616]에 따른 조각을 포함하지 않음)에 요청을 만들어 리디렉션 지침을 따릅니다. 사용자 에이전트는 조각 정보를 로컬로 유지합니다. (E) 웹 호스팅 클라이언트 리소스는 사용자 에이전트가 보유한 조각을 포함하여 전체 리디렉션 URI에 액세스하고 액세스 토큰 (및 기타 매개 변수)을 추출 할 수있는 웹 페이지 (일반적으로 스크립트가 포함 된 HTML 문서)를 반환합니다. 조각에 포함되어 있습니다. (F) 사용자 에이전트는 웹 호스팅 클라이언트 리소스에서 제공하는 스크립트를 로컬로 실행하여 액세스 토큰을 추출합니다. (G) 사용자 에이전트는 액세스 토큰을 클라이언트에 전달합니다. 암시 적 허가 사용에 대한 배경 정보는 섹션 1.3.2 및 9를 참조하십시오. 암시 적 허용을 사용할 때 중요한 보안 고려 사항은 섹션 10.3 및 10.16을 참조하십시오.
+ 그림 4에 표시된 흐름에는 다음 단계가 포함됩니다. (A) 클라이언트는 리소스 소유자의 사용자 에이전트를 권한 부여 끝점으로 보내 흐름을 시작합니다. 클라이언트에는 클라이언트 식별자, 요청 된 범위, 로컬 상태 및 액세스가 허용 (또는 거부)되면 권한 부여 서버가 사용자 에이전트를 다시 보낼 리디렉션 URI가 포함됩니다. (B) 권한 부여 서버는 사용자 에이전트를 통해 리소스 소유자를 인증하고 리소스 소유자가 클라이언트의 액세스 요청을 허용 또는 거부할지 여부를 설정합니다. (C) 리소스 소유자가 액세스 권한을 부여한다고 가정하면 권한 부여 서버는 이전에 제공된 리디렉션 URI를 사용하여 사용자 에이전트를 클라이언트로 다시 리디렉션합니다. 리디렉션 URI는 URI 조각에 액세스 토큰을 포함합니다. (D) 사용자 에이전트는 웹 호스팅 클라이언트 리소스 ([RFC2616]에 따른 조각을 포함하지 않음)에 리디렉션 지침에 따라 요청을 만듭니다. 사용자 에이전트는 조각 정보를 로컬로 유지합니다. (E) 웹 호스팅 클라이언트 리소스는 사용자 에이전트가 보유한 조각을 포함하여 전체 리디렉션 URI에 액세스하고 액세스 토큰 (및 기타 매개 변수)을 추출 할 수있는 웹 페이지 (일반적으로 스크립트가 포함 된 HTML 문서)를 반환합니다. 조각에 포함되어 있습니다. (F) 사용자 에이전트는 웹 호스팅 클라이언트 리소스에서 제공하는 스크립트를 로컬로 실행하여 액세스 토큰을 추출합니다. (G) 사용자 에이전트는 액세스 토큰을 클라이언트에 전달합니다. 암시 적 허가 사용에 대한 배경 정보는 섹션 1.3.2 및 9를 참조하십시오. 암시 적 허용을 사용할 때 중요한 보안 고려 사항은 섹션 10.3 및 10.16을 참조하십시오.
 
 
 
@@ -1270,7 +1279,7 @@ expires_in
 scope
 클라이언트가 요청한 범위와 동일한 경우 선택 사항입니다. 그렇지 않으면 필수입니다. 섹션 3.3에 설명 된 액세스 토큰의 범위.
 
-scope
+state
 클라이언트 권한 요청에 "state"매개 변수가있는 경우 필수입니다. 클라이언트로부터받은 정확한 값입니다.
 
 권한 서버는 갱신 토큰을 발행해서는 안됩니다. 예를 들어 권한 부여 서버는 다음 HTTP 응답을 전송하여 사용자 에이전트를 리디렉션합니다 (표시 목적으로 만 추가 줄 바꿈 포함).
@@ -1456,7 +1465,10 @@ The method through which the client obtains the resource owner credentials is be
 The client makes a request to the token endpoint by adding the following parameters using the "application/x-www-form-urlencoded" format per Appendix B with a character encoding of UTF-8 in the HTTP request entity-body:
 
 grant_type
-REQUIRED. Value MUST be set to "password". username REQUIRED. The resource owner username.
+REQUIRED. Value MUST be set to "password".
+
+username
+REQUIRED. The resource owner username.
 
 password
 REQUIRED. The resource owner password.
@@ -1482,7 +1494,10 @@ grant_type=password&username=johndoe&password=A3ddj3w
 클라이언트는 HTTP 요청 엔티티 본문에 UTF-8 문자 인코딩과 함께 부록 B에 따라 "application / x-www-form-urlencoded"형식을 사용하여 다음 매개 변수를 추가하여 토큰 엔드 포인트에 요청합니다.
 
 grant_type
-필수입니다. 값은 "password"로 설정해야합니다. 사용자 이름이 필요합니다. 리소스 소유자 사용자 이름입니다.
+필수입니다. 값은 "password"로 설정해야합니다.
+
+username
+필수입니다. 리소스 소유자 사용자 이름입니다.
 
 password
 필수입니다. 자원 소유자 비밀번호입니다.
@@ -1526,7 +1541,7 @@ grant_type=password&username=johndoe&password=A3ddj3w
 
 
 
- 권한 부여 서버는 다음을 수행해야합니다. o 기밀 클라이언트 또는 클라이언트 자격 증명 (또는 기타 인증 요구 사항)이 발급 된 클라이언트에 대해 클라이언트 인증을 요구하고, o 클라이언트 인증이 포함 된 경우 클라이언트를 인증하고, o 기존을 사용하여 자원 소유자 암호 자격 증명을 검증합니다. 암호 검증 알고리즘. 이 액세스 토큰 요청은 리소스 소유자의 비밀번호를 사용하므로 권한 부여 서버는 무차별 대입 공격 (예 : 속도 제한 사용 또는 경고 생성)으로부터 엔드 포인트를 보호해야합니다.
+ 권한 부여 서버는 다음을 수행해야합니다. o 기밀 클라이언트 또는 클라이언트 자격 증명 (또는 기타 인증 요구 사항)이 발급 된 클라이언트에 대해 클라이언트 인증을 요구하고, o 클라이언트 인증이 포함 된 경우 클라이언트를 인증하고, o 기존 암호 검증 알고리즘을 사용하여 자원 소유자 암호 자격 증명을 검증합니다. 이 액세스 토큰 요청은 리소스 소유자의 비밀번호를 사용하므로 권한 부여 서버는 무차별 대입 공격 (예 : 속도 제한 사용 또는 경고 생성)으로부터 엔드 포인트를 보호해야합니다.
 
 
  4.3.3. 액세스 토큰 응답
@@ -1563,7 +1578,7 @@ grant_type=password&username=johndoe&password=A3ddj3w
 
 
  4.4. 클라이언트 자격 증명 부여
-  클라이언트는 클라이언트가 제어하에있는 보호 된 리소스에 대한 액세스를 요청할 때 클라이언트 자격 증명 (또는 기타 지원되는 인증 수단) 만 사용하여 액세스 토큰을 요청할 수 있습니다. 또는 이전에 권한 부여 서버에 배치 된 다른 리소스 소유자의 액세스 토큰 ( 그 방법은이 사양의 범위를 벗어납니다).
+  클라이언트는 클라이언트가 제어하에있는 보호 된 리소스에 대한 액세스를 요청할 때 또는 이전에 권한 부여 서버에 배치 된 다른 리소스 소유자의 액세스 토큰을 요청할 때 클라이언트 자격 증명 (또는 기타 지원되는 인증 수단) 만 사용하여 액세스 토큰을 요청할 수 있습니다.  ( 그 방법은이 사양의 범위를 벗어납니다).
 
   클라이언트 자격 증명 부여 유형은 기밀 클라이언트 만 사용해야합니다.
 
@@ -1644,14 +1659,17 @@ grant_type=password&username=johndoe&password=A3ddj3w
  "example_parameter":"example_value"
  }
 
+
+
+
  예를 들어 클라이언트는 전송 계층 보안을 사용하여 다음 HTTP 요청을 수행합니다 (표시 목적으로 만 추가 줄 바꿈 포함).
 
- POST / token HTTP / 1.1
- 호스트 : server.example.com
- 인증 : 기본 czZCaGRSa3F0MzpnWDFmQmF0M2JW
- 콘텐츠 유형 : application / x-www-form-urlencoded
- grant_type = client_credentials
- 권한 서버는 클라이언트를 인증해야합니다.
+ POST /token HTTP/1.1
+ Host: server.example.com
+ Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
+ Content-Type: application/x-www-form-urlencoded
+ grant_type=client_credentials
+ The authorization server MUST authenticate the client.
 
  4.4.3. 액세스 토큰 응답
  액세스 토큰 요청이 유효하고 승인 된 경우 권한 부여 서버는 섹션 5.1에 설명 된대로 액세스 토큰을 발급합니다. 새로 고침 토큰은 포함하지 않아야합니다. 요청이 클라이언트 인증에 실패했거나 유효하지 않은 경우 권한 부여 서버는 섹션 5.2에 설명 된대로 오류 응답을 반환합니다.
@@ -1948,7 +1966,7 @@ grant_type
 refresh_token
 필수입니다. 클라이언트에 발급 된 새로 고침 토큰입니다.
 
-범위
+scope
 선택 과목. 섹션 3.3에 설명 된 액세스 요청의 범위. 요청 된 범위는 자원 소유자가 원래 부여하지 않은 범위를 포함하지 않아야하며 생략 된 경우 자원 소유자가 원래 부여한 범위와 동일하게 처리됩니다.
 
 새로 고침 토큰은 일반적으로 추가 액세스 토큰을 요청하는 데 사용되는 오래 지속되는 자격 증명이므로 새로 고침 토큰은 발급 된 클라이언트에 바인딩됩니다. 클라이언트 유형이 기밀이거나 클라이언트가 클라이언트 자격 증명 (또는 다른 인증 요구 사항이 할당 됨)이 발급 된 경우 클라이언트는 섹션 3.2.1에 설명 된대로 인증 서버로 인증해야합니다.
@@ -2313,7 +2331,7 @@ In order to prevent man-in-the-middle attacks, the authorization server MUST req
 
 
 10.8. 기밀성 요청
-액세스 토큰, 새로 고침 토큰, 리소스 소유자 암호 및 클라이언트 자격 증명은 일반 정보로 전송하면 안됩니다. 인증 코드는 투명하게 전송해서는 안됩니다. "상태"및 "범위"매개 변수는 안전하지 않은 채널을 통해 전송되거나 안전하지 않게 저장 될 수 있으므로 민감한 클라이언트 또는 리소스 소유자 정보를 일반 텍스트로 포함해서는 안됩니다.
+액세스 토큰, 새로 고침 토큰, 리소스 소유자 암호 및 클라이언트 자격 증명은 일반 정보로 전송하면 안됩니다. 인증 코드는 투명하게 전송해서는 안됩니다. "state"및 "scope"매개 변수는 안전하지 않은 채널을 통해 전송되거나 안전하지 않게 저장 될 수 있으므로 민감한 클라이언트 또는 리소스 소유자 정보를 일반 텍스트로 포함해서는 안됩니다.
 
 10.9. 엔드 포인트 신뢰성 보장
 man-in-the-middle 공격을 방지하기 위해 권한 부여 서버는 권한 부여 및 토큰 끝점으로 전송되는 모든 요청에 ​​대해 [RFC2818]에 정의 된 서버 인증과 함께 TLS를 사용해야합니다. 클라이언트는 [RFC6125]에 정의 된대로 그리고 서버 ID 인증에 대한 요구 사항에 따라 권한 부여 서버의 TLS 인증서를 확인해야합니다.
@@ -2401,7 +2419,7 @@ For public clients using implicit flows, this specification does not provide any
 
 
 10.15. 리디렉터 열기
-권한 부여 서버, 권한 부여 끝점 및 클라이언트 리디렉션 끝 점이 잘못 구성되어 개방형 리디렉터로 작동 할 수 있습니다. 개방형 리디렉터는 매개 변수를 사용하여 유효성 검사없이 매개 변수 값에 지정된 위치로 사용자 에이전트를 자동으로 리디렉션하는 엔드 포인트입니다. 오픈 리디렉터는 피싱 공격에 사용되거나 공격자가 익숙하고 신뢰할 수있는 대상의 URI 기관 구성 요소를 사용하여 최종 사용자가 악성 사이트를 방문하도록 유도 할 수 있습니다. 또한 권한 부여 서버가 클라이언트가 리디렉션 URI의 일부만 등록하도록 허용하는 경우 공격자는 클라이언트가 운영하는 개방형 리디렉터를 사용하여 권한 부여 서버 유효성 검사를 통과하지만 권한 부여 코드 또는 액세스 권한을 보내는 리디렉션 URI를 구성 할 수 있습니다. 공격자의 제어하에 끝점에 토큰.
+권한 부여 서버, 권한 부여 끝점 및 클라이언트 리디렉션 끝 점이 잘못 구성되어 개방형 리디렉터로 작동 할 수 있습니다. 개방형 리디렉터는 매개 변수를 사용하여 유효성 검사없이 매개 변수 값에 지정된 위치로 사용자 에이전트를 자동으로 리디렉션하는 엔드 포인트입니다. 오픈 리디렉터는 피싱 공격에 사용되거나 공격자가 익숙하고 신뢰할 수있는 대상의 URI 기관 구성 요소를 사용하여 최종 사용자가 악성 사이트를 방문하도록 유도 할 수 있습니다. 또한 권한 부여 서버가 클라이언트가 리디렉션 URI의 일부만 등록하도록 허용하는 경우 공격자는 클라이언트가 운영하는 개방형 리디렉터를 사용하여 권한 부여 서버 유효성 검사를 통과하지만 권한 부여 코드 또는 액세스 권한을 공격자의 제어하에 있는 리디렉션 URI endpoint로 보낼 수 있습니다.
 
 
 
@@ -2617,12 +2635,12 @@ Reference to the document(s) that specify the type, preferably including a URI t
 이 사양은 OAuth 권한 부여 끝점 응답 유형 레지스트리를 설정합니다. 권한 부여 엔드 포인트와 함께 사용할 추가 응답 유형은 한 명 이상의 지정 전문가의 조언에 따라 oauth-ext-review@ietf.org 메일 링 목록에서 2 주 검토 기간 후 사양 필수 ([RFC5226])에 등록됩니다. . 그러나 게시 전에 값 할당을 허용하기 위해 지정된 전문가 (들)는 해당 사양이 게시 될 것이라는 확신이 들면 등록을 승인 할 수 있습니다. 등록 요청은 검토 및 의견을 위해 적절한 제목 (예 : "Request for response type : example")과 함께 oauth-ext-review@ietf.org 메일 링리스트로 보내야합니다. 검토 기간 내에 지정 전문가는 등록 요청을 승인하거나 거부하여이 결정을 검토 목록 및 IANA에 전달합니다. 거부에는 설명 및 해당되는 경우 요청을 성공적으로 수행하는 방법에 대한 제안이 포함되어야합니다. IANA는 지정된 전문가의 레지스트리 업데이트 만 수락해야하며 모든 등록 요청을 검토 메일 링리스트로 보내야합니다.
 
 11.3.1. 등록 템플릿
-응답 유형 이름 :
+Response type name :
 요청 된 이름 (예 : "example").
 
-컨트롤러 변경 : 표준 추적 RFC의 경우 "IETF"를 명시하십시오. 다른 사람의 경우 책임 당사자의 이름을 제공하십시오. 기타 세부 정보 (예 : 우편 주소, 이메일 주소, 홈페이지 URI)도 포함될 수 있습니다.
+Change controller : 표준 추적 RFC의 경우 "IETF"를 명시하십시오. 다른 사람의 경우 책임 당사자의 이름을 제공하십시오. 기타 세부 정보 (예 : 우편 주소, 이메일 주소, 홈페이지 URI)도 포함될 수 있습니다.
 
-사양 문서 :
+Specification document(s) :
 유형을 지정하는 문서에 대한 참조. 문서의 사본을 검색하는 데 사용할 수있는 URI를 포함하는 것이 좋습니다. 관련 섹션의 표시도 포함될 수 있지만 필수는 아닙니다.
 
 
